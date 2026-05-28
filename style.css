@@ -1,0 +1,112 @@
+diff --git a/style.css b/style.css
+index 3b529d2c623161e874342eba63be1fd9348b8d42..d9d366f6031d66540d7f593ab882801f4a8febe7 100644
+--- a/style.css
++++ b/style.css
+@@ -657,92 +657,104 @@ html, body {
+     font-size: 1.6rem;
+     font-weight: 700;
+     padding: 8px;
+     color: var(--text-secondary);
+     font-variant-numeric: tabular-nums;
+ }
+ 
+ /* Question */
+ .question-area {
+     padding: 16px 24px 20px;
+ }
+ 
+ .question-weight {
+     font-size: 0.8rem;
+     color: var(--accent-gold);
+     margin-bottom: 8px;
+     opacity: 0.7;
+ }
+ 
+ .question-text {
+     font-size: 1.3rem;
+     line-height: 1.6;
+     color: var(--text-primary);
+     text-align: center;
+     min-height: 60px;
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+ }
+ 
+ .question-gap {
+     display: inline-block;
+     min-width: calc(var(--gap-ch, 6) * 0.45em);
+     border-bottom: 2px solid rgba(255, 255, 255, 0.65);
+     margin: 0 0.18em;
+     transform: translateY(-0.02em);
+ }
+ 
+ /* Answer */
+ .answer-area {
+     padding: 0 24px 24px;
+     display: flex;
+     gap: 10px;
+ }
+ 
+ .answer-input {
+     flex: 1;
+     padding: 14px 18px;
+     border: 2px solid var(--border-subtle);
+     border-radius: 10px;
+     background: rgba(255, 255, 255, 0.05);
+     color: var(--text-primary);
+     font-size: 1.1rem;
+     font-family: var(--font-body);
+     transition: border-color 0.2s;
+ }
+ 
+ .answer-input:focus {
+     outline: none;
+     border-color: var(--accent-gold);
+ }
+ 
+ .answer-input::placeholder {
+     color: var(--text-secondary);
+     opacity: 0.5;
+ }
+ 
++.inline-answer-input {
++    display: inline-block;
++    flex: 0 1 auto;
++    width: max(180px, calc(var(--gap-ch, 10) * 0.85em));
++    min-width: 180px;
++    max-width: min(100%, 360px);
++    margin: 0 0.18em;
++    padding: 8px 12px;
++    vertical-align: baseline;
++}
++
++.answer-area.has-inline-answer {
++    justify-content: center;
++}
++
+ .submit-answer-btn {
+     padding: 14px 28px;
+     border: none;
+     border-radius: 10px;
+     background: linear-gradient(135deg, var(--accent-gold-dark), var(--accent-gold));
+     color: var(--bg-dark);
+     font-family: var(--font-title);
+     font-size: 1rem;
+     font-weight: 700;
+     cursor: pointer;
+     letter-spacing: 1px;
+     transition: all 0.2s;
+     white-space: nowrap;
+ }
+ 
+ .submit-answer-btn:hover {
+     transform: translateY(-1px);
+     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+ }
+ 
+ /* ========== FEEDBACK OVERLAY ========== */
+ .feedback-overlay {
+     position: fixed;
+     top: 0; left: 0; right: 0; bottom: 0;
+     z-index: 200;
